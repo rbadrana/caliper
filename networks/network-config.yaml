@@ -1,0 +1,46 @@
+caliper:
+    blockchain: fabric
+    sutOptions :
+       mutualTls: true
+
+channels:
+  - channelName: mychannel
+    contracts: [{ "id": "orgtmp", "version": "3" }]
+    
+      
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: 'client0.org1.example.com'
+        clientPrivateKey:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/key.pem
+        clientSignedCert:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/ubuntu/caliper/crypto-config/connection-profiles/connection-profile.yaml
+      discover: false
+
+  - mspid: Org2MSP
+    identities:
+      certificates:
+      - name: 'client0.org2.example.com'
+        clientPrivateKey:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore/priv_sk.pem
+        clientSignedCert:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/ubuntu/caliper/crypto-config/connection-profiles/connection-profile.yaml
+      discover: false
+
+  - mspid: Org3MSP
+    identities:
+      certificates:
+      - name: 'client0.org3.example.com'
+        clientPrivateKey:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/keystore/priv_sk.pem
+        clientSignedCert:
+          path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/ubuntu/caliper/crypto-config/connection-profiles/connection-profile.yaml
+      discover: false    

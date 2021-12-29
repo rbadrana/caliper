@@ -1,0 +1,95 @@
+
+organizations:
+  Org1:
+    mspid: Org1MSP
+    peers:
+    - peer0.org1.example.com
+    - peer1.org1.example.com
+  Org2:
+    mspid: Org2MSP
+    peers:
+    - peer0.org2.example.com
+    - peer1.org2.example.com
+  Org3:
+    mspid: Org3MSP
+    peers:
+    - peer0.org3.example.com
+    - peer1.org3.example.com
+orderers:
+  orderer.example.com:
+    url: grpcs://35.238.132.151:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.example.com
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/tlscacerts/tls-localhost-9054-ca-orderer.pem
+  orderer2.example.com:
+    url: grpcs://35.238.132.151:8050
+    grpcOptions:
+      ssl-target-name-override: orderer2.example.com
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/tlscacerts/tls-localhost-9054-ca-orderer.pem
+  orderer3.example.com:
+    url: grpcs://35.238.132.151:9050
+    grpcOptions:
+      ssl-target-name-override: orderer3.example.com
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/tlscacerts/tls-localhost-9054-ca-orderer.pem
+peers:
+  peer0.org1.example.com:
+    url: grpcs://35.232.154.56:7051
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/tlscacerts/tls-localhost-7054-ca-org1-example-com.pem
+
+  peer1.org1.example.com:
+    url: grpcs://35.232.154.56:8051
+    grpcOptions:
+      ssl-target-name-override: peer1.org1.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/tlscacerts/tls-localhost-7054-ca-org1-example-com.pem
+
+  peer0.org2.example.com:
+    url: grpcs://35.239.129.124:9051
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/tlscacerts/tls-localhost-8054-ca-org2-example-com.pem
+  peer1.org2.example.com:
+    url: grpcs://35.239.129.124:10051
+    grpcOptions:
+      ssl-target-name-override: peer1.org2.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/tlscacerts/tls-localhost-8054-ca-org2-example-com.pem
+  
+  peer0.org3.example.com:
+    url: grpcs://104.197.211.79:11051
+    grpcOptions:
+      ssl-target-name-override: peer0.org3.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/tlscacerts/tls-localhost-10054-ca-org3-example-com.pem
+  peer1.org3.example.com:
+    url: grpcs://104.197.211.79:12051
+    grpcOptions:
+      ssl-target-name-override: peer1.org3.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: /home/ubuntu/caliper/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls/tlscacerts/tls-localhost-10054-ca-org3-example-com.pem
+channels:
+    mychannel:
+        orderers:
+        - orderer.example.com
+        - orderer2.example.com
+        - orderer3.example.com
+        peers:
+            peer0.org1.example.com:
+                eventSource: true
+            peer0.org2.example.com:
+                eventSource: true
+            peer0.org3.example.com:
+                eventSource: true

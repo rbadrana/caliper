@@ -1,0 +1,19 @@
+test:
+  name: FabricMultiOrg-Test
+  description: This is for testing FabricMultiOrg System Performance 
+  workers:
+    type: local
+    number: 2      #number of clients you need to spawn
+  rounds:
+      - label: setOrgTmp
+        description: adding sensor temperature 
+        txDuration: 30
+        rateControl: 
+          type: fixed-load
+          opts:
+            transactionLoad: 10
+        workload:
+          module: workload/workload.js
+          arguments:
+            contractId: orgtmp
+            
