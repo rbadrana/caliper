@@ -152,7 +152,7 @@
                     </tr>
 
                     <tr>
-                         <td>setOrgTmp</td> <td>74</td> <td>0</td> <td>0.2</td> <td>393.12</td> <td>0.37</td> <td>65.72</td> <td>0.2</td>
+                         <td>setOrgTmp</td> <td>13</td> <td>809</td> <td>26.2</td> <td>3.17</td> <td>1.25</td> <td>1.95</td> <td>25.8</td>
                     </tr>
                 </table>
             </div>
@@ -163,7 +163,7 @@
 rateControl:
   type: fixed-load
   opts:
-    transactionLoad: 10
+    transactionLoad: 100
 </pre>
                         <h3>Performance metrics for setOrgTmp</h3>
                             <table style="min-width: 100%;">
@@ -171,7 +171,7 @@ rateControl:
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>setOrgTmp</td> <td>74</td> <td>0</td> <td>0.2</td> <td>393.12</td> <td>0.37</td> <td>65.72</td> <td>0.2</td>
+                                     <td>setOrgTmp</td> <td>13</td> <td>809</td> <td>26.2</td> <td>3.17</td> <td>1.25</td> <td>1.95</td> <td>25.8</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for setOrgTmp</h3>
@@ -192,9 +192,9 @@ rounds:
     rateControl:
       type: fixed-load
       opts:
-        transactionLoad: 10
+        transactionLoad: 100
     workload:
-      module: workload&#x2F;getOrgTmp.js
+      module: workload&#x2F;setOrgTmp.js
       arguments:
         contractId: orgtmp
 </pre>

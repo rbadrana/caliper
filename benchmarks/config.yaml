@@ -13,7 +13,7 @@ test:
           opts:
             transactionLoad: 10
         workload:
-          module: workload/getOrgTmp.js
+          module: workload/setOrgTmp.js
           arguments:
             contractId: orgtmp
             
